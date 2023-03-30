@@ -284,10 +284,6 @@ features = ['HomePlanet','CryoSleep','Destination','VIP']
 features_test = features
 columns=['RoomService','FoodCourt','ShoppingMall','Spa','VRDeck','HomePlanet','CryoSleep','Destination','Age','VIP','PassengerId','Cabin','Name','Age']
 columns_test = columns
-#df1 = df.loc[:, features]
-#'RoomService','FoodCourt','ShoppingMall','Spa','VRDeck'
-
-
 
 
 for col in features:
@@ -342,13 +338,6 @@ df1 = df1.drop('Transported',axis=1)
 from sklearn.model_selection import train_test_split
 RANDOM_STATE = 1234
 
-
-
-# X_train, X_test, y_train, y_test = \
-#     train_test_split(df1, df2, test_size=0.2, random_state=RANDOM_STATE)
-
-# X_train.shape, y_train.shape, X_test.shape, y_test.shape
-
 X_train = df1
 y_train = df2
 
@@ -360,10 +349,6 @@ from sklearn.metrics import confusion_matrix, classification_report
 def model(classifier, X_train, X_test):
   classifier.fit(X_train, y_train)  
 y_pred = classifier.predict(X_test)
-#     accuracy = accuracy_score(y_test, y_pred)
-#     print('Accuracy: {:.3f}\n'.format(accuracy))
-#     print(confusion_matrix(y_test, y_pred))
-#     print(classification_report(y_test, y_pred))
 return y_pred
 
 from sklearn.naive_bayes import MultinomialNB
